@@ -6,9 +6,11 @@ import { NavController } from 'ionic-angular';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
 export class HomePage {
-public titre : string;
+public titre : any;
 public resultat : any;
+public entree = '';
 
   constructor(public navCtrl: NavController,public omdb:OmdbProvider) {
     
@@ -16,4 +18,10 @@ public resultat : any;
       console.log(listMovies);
       this.titre = listMovies;
   })
-  }}
+}
+public search(){
+  this.omdb.searchMovies(this.entree).subscribe((listMovies) => {
+  this.titre = listMovies
+}
+)
+}}

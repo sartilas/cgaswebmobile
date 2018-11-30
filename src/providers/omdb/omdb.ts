@@ -13,5 +13,9 @@ public getMovies(){
       map(response => response['Search'] )
     )   
 }
-
+public searchMovies(ex:string){
+  return  this.http.get('http://www.omdbapi.com/?s='+ex+'&apikey=75522b56').pipe(
+      map(response => response['Search'] )
+    )   
+}
 }
