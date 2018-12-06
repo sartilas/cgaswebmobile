@@ -1,5 +1,7 @@
+import { DetailsPage } from './../details/details';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { OmdbProvider } from './../../providers/omdb/omdb';
 
 /**
  * Generated class for the FilmPage page.
@@ -15,11 +17,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FilmPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+public titre : any;
+public resultat : any;
+public entree = '';
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FilmPage');
-  }
+  constructor(public navCtrl: NavController,public omdb:OmdbProvider) {
+    
+    this.omdb.searchMovies(this.entree, 'movie').subscribe((listMovies) => {
+      this.titre = listMovies;
+  })
+}
+public itemTapped(event, exemple){
+  console.log ('lol')
+this.navCtrl.push(DetailsPage, {item: exemple.imdbID}
 
+  )}
+
+
+
+public search(){
+  this.omdb.searchMovies(this.entree,'movie').subscribe((listMovies) => {
+  this.titre = listMovies
+}
+);
+}
 }

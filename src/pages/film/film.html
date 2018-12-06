@@ -9,10 +9,22 @@
   <ion-navbar>
     <ion-title>film</ion-title>
   </ion-navbar>
-
+   
+<ion-tabs></ion-tabs>
+<ion-searchbar 
+[(ngModel)]="entree"
+(ionInput)="search()"></ion-searchbar>
 </ion-header>
 
+<ion-content class="card-background-page">
 
-<ion-content padding>
+
+  <ion-card *ngFor="let film of titre">
+  <ion-row (click)="itemTapped($event, film)">
+      <div class="card-title">{{film.Title}}</div>
+      <div class="card-subtitle">{{film.Year}}</div>
+  </ion-row>
+    <!-- <img src="img/card-saopaolo.png"/> -->
+ </ion-card> 
 
 </ion-content>

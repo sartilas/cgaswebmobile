@@ -1,5 +1,5 @@
 <!--
-  Generated template for the SeriePage page.
+  Generated template for the FilmPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,11 +7,25 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>serie</ion-title>
+    <ion-title>séries</ion-title>
   </ion-navbar>
-
+   
+<ion-tabs></ion-tabs>
+<ion-searchbar 
+[(ngModel)]="entree"
+(ionInput)="search()"></ion-searchbar>
 </ion-header>
 
+<ion-content class="card-background-page">
+
+  <ion-card *ngFor="let film of titre">
+    <!-- <img src="img/card-saopaolo.png"/> -->
+    <div class="card-title">{{film.Title}}</div>
+    <div class="card-subtitle">{{film.Year}}</div>
+  </ion-card>
+
+
+</ion-content>
 
 <ion-content padding>
 

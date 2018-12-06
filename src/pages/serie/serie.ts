@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { OmdbProvider } from './../../providers/omdb/omdb';
 
 /**
- * Generated class for the SeriePage page.
+ * Generated class for the FilmPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +11,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-serie',
-  templateUrl: 'serie.html',
+  selector: 'page-film',
+  templateUrl: 'Serie.html',
 })
 export class SeriePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+public titre : any;
+public resultat : any;
+public entree = '';
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SeriePage');
-  }
-
+  constructor(public navCtrl: NavController,public omdb:OmdbProvider) {
+    
+    this.omdb.searchMovies(this.entree, 'movie').subscribe((listMovies) => {
+      console.log(listMovies);
+      this.titre = listMovies;
+  })
+}
+public search(){
+  this.omdb.searchMovies(this.entree,'series').subscribe((listMovies) => {
+  this.titre = listMovies
+}
+)
+}
 }
