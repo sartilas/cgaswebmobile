@@ -23,21 +23,18 @@ public entree = '';
 
   constructor(public navCtrl: NavController,public omdb:OmdbProvider) {
     
-    this.omdb.searchMovies(this.entree, 'movie').subscribe((listMovies) => {
-      this.titre = listMovies;
+  this.omdb.searchMovies(this.entree, 'movie').subscribe((listMovies) => {
+  this.titre = listMovies;
   })
 }
+
 public itemTapped(event, exemple){
-  console.log ('lol')
 this.navCtrl.push(DetailsPage, {item: exemple.imdbID}
-
-  )}
-
-
+)}
 
 public search(){
-  this.omdb.searchMovies(this.entree,'movie').subscribe((listMovies) => {
-  this.titre = listMovies
+this.omdb.searchMovies(this.entree,'movie').subscribe((listMovies) => {
+this.titre = listMovies
 }
 );
 }

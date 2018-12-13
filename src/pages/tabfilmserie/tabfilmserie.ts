@@ -17,7 +17,7 @@ export class TabfilmseriePage {
 
   filmRoot = 'FilmPage'
   serieRoot = 'SeriePage'
-
+  favorisRoot = 'FavorisPage'
 
   constructor(public navCtrl: NavController) {}
 

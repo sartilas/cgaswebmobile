@@ -1,4 +1,5 @@
 import { DetailsPageModule } from './../pages/details/details.module';
+import { DetailseriePageModule } from './../pages/detailserie/detailserie.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -18,8 +19,10 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     DetailsPageModule,
+    DetailseriePageModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp)
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
