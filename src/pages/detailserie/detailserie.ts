@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { OmdbProvider } from './../../providers/omdb/omdb';
 
 /**
  * Generated class for the DetailseriePage page.
@@ -25,4 +26,3 @@ export class DetailseriePage {
 
   }
 
-}
