@@ -15,11 +15,15 @@ export class DetailsPage {
   favorite: boolean = false;
  
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public donnees:OmdbProvider,
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public donnees:OmdbProvider,
     public favorisProvider: FavorisProvider) { console.log(this.navParams.get('item'));
+    this.favorisProvider.isFavortieMovie(this.navParams.get('item')).then((favorite) =>{this.isFavorite=favorite})  
     this.donnees.getDetails(this.navParams.get('item')).subscribe((listDetails) =>{ console.log(listDetails);
-      this.data = listDetails;
-    });  }
+    this.data = listDetails;  
+  });  }
      
       toggleFavorite() {
         if (this.isFavorite) {
@@ -27,7 +31,7 @@ export class DetailsPage {
           this.favorisProvider.removeFavoriteMovie(this.data)
         } else {
           this.isFavorite = true;
-this.favorisProvider.addFavoriteMovie(this.data)          
+          this.favorisProvider.addFavoriteMovie(this.data)          
         }
       }
     }

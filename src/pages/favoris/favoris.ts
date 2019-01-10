@@ -3,12 +3,6 @@ import { FavorisProvider } from './../../providers/favoris/favoris';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FilmPage } from '../film/film';
-/**
- * Generated class for the FavorisPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
