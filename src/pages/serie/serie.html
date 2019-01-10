@@ -10,13 +10,11 @@
 </ion-header>
 
 <ion-content >
-
-    <ion-grid> 
-        <ion-col col-2>
-        <ion-card *ngFor="let film of titre" (click)="itemTapped($event, film)">
-        <img src="{{film.Poster}}"/>
-        <div class="card-title">{{film.Title}}</div>
-        <div class="card-subtitle">{{film.Year}}</div>
-   </ion-card>  </ion-col></ion-grid> 
-
+  <ion-grid> 
+    <ion-col>
+    <ion-card *ngFor="let film of titre" (click)="itemTapped($event, film)">
+    <img  src="{{film.Poster}}"/>
+    <div class="card-title">{{film.Title}}</div>
+    <div class="card-subtitle">{{film.Year}}</div></div>
+</ion-card>  </ion-col></ion-grid> 
  </ion-content>

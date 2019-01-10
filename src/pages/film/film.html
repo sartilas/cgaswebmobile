@@ -23,9 +23,8 @@
       <ion-col>
       <ion-card *ngFor="let film of titre" (click)="itemTapped($event, film)">
       <img  src="{{film.Poster}}"/>
-     <div  style=degrade>
       <div class="card-title">{{film.Title}}</div>
-      <div class="card-subtitle">{{film.Year}}</div></div>
+      <div class="card-subtitle">{{film.Year}}</div>
  </ion-card>  </ion-col></ion-grid> 
  
 </ion-content>
