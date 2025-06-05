@@ -17,12 +17,12 @@ export class FavorisProvider {
     this.storage.remove(this.getMovieKey(movie));
   }
  
-  isFavortieMovie(movie) {
+  isFavoriteMovie(movie) {
     return this.storage.get(this.getMovieKey(movie));
   }
- 
-  toogleFavoriteMovie(movie) {
-    this.isFavortieMovie(movie).then(
+
+  toggleFavoriteMovie(movie) {
+    this.isFavoriteMovie(movie).then(
       isFavorite =>
         isFavorite
           ? this.removeFavoriteMovie(movie)

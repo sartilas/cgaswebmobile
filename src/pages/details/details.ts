@@ -20,7 +20,7 @@ export class DetailsPage {
     public navParams: NavParams,
     public donnees:OmdbProvider,
     public favorisProvider: FavorisProvider) { console.log(this.navParams.get('item'));
-    this.favorisProvider.isFavortieMovie(this.navParams.get('item')).then((favorite) =>{this.isFavorite=favorite})  
+    this.favorisProvider.isFavoriteMovie(this.navParams.get('item')).then((favorite) =>{this.isFavorite=favorite})
     this.donnees.getDetails(this.navParams.get('item')).subscribe((listDetails) =>{ console.log(listDetails);
     this.data = listDetails;  
   });  }
